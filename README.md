@@ -20,6 +20,11 @@ Use your own mappings:
 let g:stash_line_map = '<leader>st'
 ```
 
+You must set Bitbucket domain:
+```
+let g:stash_line_domain = 'example.com'
+```
+
 ## Debugging
 
 For getting verbose prints from vim-stash-line plugin set.

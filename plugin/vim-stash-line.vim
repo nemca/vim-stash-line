@@ -12,6 +12,10 @@ endif
 
 let g:loaded_stash_line = 1
 
+if !exists('g:stash_line_domain')
+  throw 'g:stash_line_domain variable must be set'
+endif
+
 if !exists('g:stash_line_trace')
   let g:stash_line_trace = 0
 endif
@@ -94,7 +98,7 @@ func! s:stash_line() range
 endfunc
 
 func! s:Stash(remote_url)
-  return match(a:remote_url, 'stash.msk.avito.ru') >= 0
+  return match(a:remote_url, g:stash_line_domain) >= 0
 endfunc
 
 func! s:StashLineRange(firstLine, lastLine, lineNum)
